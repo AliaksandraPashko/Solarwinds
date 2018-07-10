@@ -118,7 +118,11 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="Source.cpp" />
+    <ClCompile Include="Notificator.cpp" />
+    <ClCompile Include="Notificator_Tests.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Notificator.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
