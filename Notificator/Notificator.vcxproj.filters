@@ -15,10 +15,13 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Notificator.cpp">
+    <ClCompile Include="test_all_buffered_messages_are_recieved.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Notificator_Tests.cpp">
+    <ClCompile Include="test_unbuffered_messages_are_overwrited.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="main.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

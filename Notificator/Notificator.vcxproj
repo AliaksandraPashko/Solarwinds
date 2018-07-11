@@ -118,8 +118,9 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="Notificator.cpp" />
-    <ClCompile Include="Notificator_Tests.cpp" />
+    <ClCompile Include="main.cpp" />
+    <ClCompile Include="test_unbuffered_messages_are_overwrited.cpp" />
+    <ClCompile Include="test_all_buffered_messages_are_recieved.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Notificator.h" />

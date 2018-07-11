@@ -4,6 +4,8 @@
 #include <thread>
 #include <mutex>
 #include <assert.h>
+#include <set>
+#include <iterator>
 
 
 template<typename Message, typename Function>
@@ -25,12 +27,11 @@ public:
 		std::lock_guard <std::mutex> lock_g(mtx);
 		if (!buffered_message_)
 		{
-		//	assert(que_.size() == 1);
-			if (!que_.empty())
+			while (!que_.empty())
 			{
 				que_.pop();
-				assert(que_.size() == 0);
 			}
+			assert(que_.size() == 0);
 		}
 		que_.push(message);
 		cv_.notify_all();
@@ -67,7 +68,6 @@ public:
 
 	~Notificator()
 	{
-//		std::lock_guard <std::mutex> lock_g(mtx);
 		is_finishing_ = true;
 		cv_.notify_all();
 		t_.join();
