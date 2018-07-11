@@ -1,4 +1,5 @@
 #include "Notificator.h"
+#include <assert.h>
 
 using notif_parameters = Notificator<int, void(*)(int)>;
 

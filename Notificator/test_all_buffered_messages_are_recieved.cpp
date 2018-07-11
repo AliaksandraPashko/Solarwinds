@@ -1,4 +1,5 @@
 #include "Notificator.h"
+#include <assert.h>
 
 using notif_parameters = Notificator<int, void(*)(int)>;
 
@@ -41,7 +42,6 @@ void worker_push_buffered(std::shared_ptr<notif_parameters> notificator_ptr, int
 	{
 		notificator_ptr->notify(x);
 		x += 2;
-		//	std::this_thread::sleep_for(std::chrono::milliseconds(100));
 	}
 }
 

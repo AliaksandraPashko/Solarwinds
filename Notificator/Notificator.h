@@ -1,11 +1,10 @@
 #pragma once
 #include <iostream>
-#include <queue>
-#include <thread>
-#include <mutex>
-#include <assert.h>
-#include <set>
 #include <iterator>
+#include <mutex>
+#include <queue>
+#include <set>
+#include <thread>
 
 
 template<typename Message, typename Function>
@@ -31,11 +30,9 @@ public:
 			{
 				que_.pop();
 			}
-			assert(que_.size() == 0);
 		}
 		que_.push(message);
 		cv_.notify_all();
-	//	std::cout << std::this_thread::get_id() << " works " << std::endl;
 	}
 
 	void listener()
